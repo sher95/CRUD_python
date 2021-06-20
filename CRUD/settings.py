@@ -38,7 +38,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'register',
-    'crispy_forms'
+    'crispy_forms',
+    'django_jenkins'
+]
+
+JENKINS_TASKS = [
+    'django_jenkins.tasks.run_pep8',
+    'django_jenkins.tasks.run_pyflakes',
+    'django_jenkins.tasks.run_jslint',
+    'django_jenkins.tasks.run_csslint',
+    'django_jenkins.tasks.run_sloccount'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -82,7 +91,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'CRUD_student',
         'USER': 'postgres',
-        'PASSWORD': 'phoenix292',
+        'PASSWORD': 'password',
         'HOST': 'localhost'
     }
 }
